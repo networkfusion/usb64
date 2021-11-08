@@ -41,9 +41,9 @@ jobs:
       run: |
         platformio platform update
         platformio run -e ${{ matrix.board }}
-        # platformio system prune
+        # platformio system prune --force
 
-    - name: Upload firmware artifact
+    - name: Upload firmware artifact to current run
       uses: actions/upload-artifact@v2
       with:
         name: test-firmware-${{ matrix.board }}.hex
