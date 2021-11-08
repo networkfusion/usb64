@@ -41,7 +41,7 @@ jobs:
       run: |
         platformio platform update
         platformio run -e ${{ matrix.board }}
-        platformio system prune
+        # platformio system prune
 
     - name: Upload firmware artifact
       uses: actions/upload-artifact@v2
