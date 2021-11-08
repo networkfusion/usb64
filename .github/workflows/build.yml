@@ -38,7 +38,16 @@ jobs:
         echo "BUILD_TAG=$BUILD_TAG" >> $GITHUB_ENV
         
     - name: Compile code
-      run: platformio run -e ${{ matrix.board }}
+      run: |
+        platformio platform update
+        platformio run -e ${{ matrix.board }}
+        platformio system prune
+
+    - name: Upload firmware artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-firmware-${{ matrix.board }}.hex
+        path: .pio/build/${{ matrix.board }}/firmware.hex
 
     - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
       name: Create Release
