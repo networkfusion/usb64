@@ -1,7 +1,11 @@
 // Copyright 2020, Ryan Wendland, usb64
 // SPDX-License-Identifier: MIT
 
+#ifndef STM32_INPUT
 #include <Arduino.h>
+#else
+// What needs including here?
+#endif
 #include "USBHost_t36.h"
 #include "usb64_conf.h"
 #include "n64_controller.h"
