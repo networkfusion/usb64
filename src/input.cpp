@@ -3,8 +3,8 @@
 
 #ifndef LIB_TINY_USB
 //#include <Arduino.h>
-#include <HID.h>
-#include <Mouse.h>
+// #include <HID.h>
+// #include <Mouse.h>
 #include <Keyboard.h>
 #include "USBHost_t36.h"
 #else

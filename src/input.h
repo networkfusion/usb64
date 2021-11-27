@@ -6,8 +6,8 @@
 
 #ifndef LIB_TINY_USB
 // #include <Arduino.h>
-#include <HID.h>
-#include <Mouse.h>
+// #include <HID.h>
+// #include <Mouse.h>
 #include <Keyboard.h>
 #else
 // Would also require: https://github.com/cyborg5/TinyUSB_Mouse_and_Keyboard
