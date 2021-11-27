@@ -7,6 +7,32 @@
 #include "memory.h"
 #include "usb64_conf.h"
 #include "fileio.h"
+#include "memory.h"
+
+void n64hal_system_init()
+{
+    NVIC_SET_PRIORITY(IRQ_GPIO6789, 1);
+}
+
+void n64hal_debug_init()
+{
+    serial_port.begin(256000);
+}
+
+void n64hal_debug_write(char c)
+{
+    serial_port.write(c);
+}
+
+void n64hal_disable_interrupts()
+{
+    noInterrupts();
+}
+
+void n64hal_enable_interrupts()
+{
+    interrupts();
+}
 
 /*
  * Function: Reads a hardware realtime clock and populates day,h,m,s.
@@ -105,16 +131,41 @@ void n64hal_input_swap(n64_input_dev_t *controller, uint8_t val)
 }
 
 /*
- * Function: Returns the data line level for the n64 controller passed to this function.
+ * Function: Returns the data line level for the pin passed to this function.
  * Speed critical!
  * ----------------------------
  *   Returns: 1 of the line if high, or 0 if the line is low.
  *
- *   controller: Pointer to the n64 controller struct which contains the gpio mapping
+ *   Pin number: (See usb64_conf.h)
  */
-uint8_t n64hal_input_read(n64_input_dev_t *controller)
+uint8_t n64hal_input_read(int pin)
 {
-    return digitalReadFast(controller->gpio_pin);
+    return digitalReadFast(pin);
+}
+
+/*
+ * Function: Sets the GPIO mode of a pin
+ * ----------------------------
+ *   Returns: void
+ *
+ *   Pin number (See usb64_conf.h)
+ *   val: N64_OUTPUT or N64_INPUT_PULLDOWN or N64_INPUT_PULLUP
+ */
+void n64hal_pin_set_mode(int pin, uint8_t mode)
+{
+    switch (mode)
+    {
+    case N64_OUTPUT:
+        pinMode(pin, OUTPUT);
+        break;
+    case N64_INPUT_PULLDOWN:
+        pinMode(pin, INPUT_PULLDOWN);
+        break;
+    case N64_INPUT_PULLUP:
+    default:
+        pinMode(pin, INPUT_PULLUP);
+        break;
+    }
 }
 
 /*
@@ -129,6 +180,26 @@ uint8_t n64hal_input_read(n64_input_dev_t *controller)
 void n64hal_output_set(uint8_t pin, uint8_t level)
 {
     digitalWriteFast(pin, level);
+}
+
+void n64hal_attach_interrupt(uint8_t pin, void (*handler)(void), int mode)
+{
+    int _mode = -1;
+    switch (mode)
+    {
+        case N64_INTMODE_CHANGE: _mode = CHANGE; break;
+        case N64_INTMODE_FALLING: _mode = FALLING; break;
+        case N64_INTMODE_RISING: _mode = RISING; break;
+    }
+    if (_mode != -1)
+    {
+        attachInterrupt(digitalPinToInterrupt(pin), handler, _mode);
+    }
+}
+
+void n64hal_detach_interrupt(uint8_t pin)
+{
+    detachInterrupt(digitalPinToInterrupt(pin));
 }
 
 /*
@@ -189,13 +260,13 @@ uint32_t n64hal_list_gb_roms(char **gb_list, uint32_t max)
         {
             if (rom_count < max)
             {
-                gb_list[rom_count] = (char *)malloc(strlen(file_list[i]) + 1);
+                gb_list[rom_count] = (char *)memory_dev_malloc(strlen(file_list[i]) + 1);
                 strcpy(gb_list[rom_count], file_list[i]);
                 rom_count++;
             }
         }
         //Free file list as we go
-        free(file_list[i]);
+        memory_dev_free(file_list[i]);
     }
     return rom_count;
 }
