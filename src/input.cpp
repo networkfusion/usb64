@@ -1,12 +1,15 @@
 // Copyright 2020, Ryan Wendland, usb64
 // SPDX-License-Identifier: MIT
 
-#ifndef STM32_INPUT
+#ifndef LIB_TINY_USB
 #include <Arduino.h>
-#else
-// What needs including here?
-#endif
 #include "USBHost_t36.h"
+#else
+// What needs including here for tinyusb?
+//#include <usbh.h>
+//#include <hub.h>
+#endif
+
 #include "usb64_conf.h"
 #include "n64_controller.h"
 #include "input.h"

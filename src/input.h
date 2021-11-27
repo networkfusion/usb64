@@ -4,7 +4,7 @@
 #ifndef _INPUT_H
 #define _INPUT_H
 
-#ifndef STM32_INPUT
+#ifndef LIB_TINY_USB
 #include <Arduino.h>
 #endif
 
