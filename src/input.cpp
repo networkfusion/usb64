@@ -8,6 +8,7 @@
 // What needs including here for tinyusb?
 // #include "usbh.h"
 // #include "hub.h"
+// #include <TinyUSB_Mouse_and_Keyboard.h>
 #endif
 
 #include "usb64_conf.h"
