@@ -6,8 +6,8 @@
 #include "USBHost_t36.h"
 #else
 // What needs including here for tinyusb?
-#include "usbh.h"
-#include "hub.h"
+// #include "usbh.h"
+// #include "hub.h"
 #endif
 
 #include "usb64_conf.h"
