@@ -2,15 +2,10 @@
 // SPDX-License-Identifier: MIT
 
 #ifndef LIB_TINY_USB
-//#include <Arduino.h>
-// #include <HID.h>
-// #include <Mouse.h>
-#include <Keyboard.h>
+#include <Arduino.h>
 #include "USBHost_t36.h"
 #else
 // What needs including here for tinyusb?
-// Would also require: https://github.com/cyborg5/TinyUSB_Mouse_and_Keyboard
-#include <TinyUSB_Mouse_and_Keyboard.h> // https://gist.github.com/todbot/13880b3ddfb4f1c857328f1974b12036 may help here!
 #endif
 
 #include "usb64_conf.h"
