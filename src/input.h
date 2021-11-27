@@ -4,7 +4,9 @@
 #ifndef _INPUT_H
 #define _INPUT_H
 
+#ifndef STM32_INPUT
 #include <Arduino.h>
+#endif
 
 typedef struct
 {
