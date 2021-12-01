@@ -151,7 +151,7 @@ uint32_t n64hal_hs_tick_get()
 
 uint32_t n64hal_millis()
 {
-    return millis();
+    return 0;
 }
 
 /*
