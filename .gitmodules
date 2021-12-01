@@ -7,3 +7,6 @@
 [submodule "src/stm32/disco_f769ni/otm8009a"]
 	path = src/stm32/disco_f769ni/otm8009a
 	url = https://github.com/STMicroelectronics/stm32-otm8009a.git
+[submodule "src/port_stm32/disco_f769ni/otm8009a"]
+	path = src/port_stm32/disco_f769ni/otm8009a
+	url = https://github.com/STMicroelectronics/stm32-otm8009a.git
