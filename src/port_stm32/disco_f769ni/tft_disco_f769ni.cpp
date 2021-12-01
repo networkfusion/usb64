@@ -6,7 +6,7 @@
 #include "controller_icon.h"
 #include "usb64_logo.h"
 #include "GuiLite.h"
-#include "Otm8009a.h"
+//#include "Otm8009a.h" //needs the submodule initializing?
 
 c_surface *psurface_guilite = NULL;
 c_display *pdisplay_guilite = NULL;
