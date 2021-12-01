@@ -3,8 +3,8 @@
 
 #include "usb64_conf.h"
 #include "tusb.h"
-#include "stm32f7xx_hal.h"
-#include "board.h"
+// #include "stm32f7xx_hal.h"
+// #include "board.h"
 
 void USB_IRQHandler(void)
 {
