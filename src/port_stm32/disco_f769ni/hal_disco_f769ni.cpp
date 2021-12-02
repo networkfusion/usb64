@@ -142,8 +142,8 @@ void n64hal_hs_tick_init()
  */
 uint32_t n64hal_hs_tick_get_speed()
 {
-    return 0;
-    //return F_CPU;
+    //return 0;
+    return F_CPU;
 }
 
 /*
@@ -154,15 +154,13 @@ uint32_t n64hal_hs_tick_get_speed()
  */
 uint32_t n64hal_hs_tick_get()
 {
-    return 0;
-    //return ARM_DWT_CYCCNT;
+    //return 0;
+    return ARM_DWT_CYCCNT;
 }
 
 uint32_t n64hal_millis()
 {
-    //return 0;
-    //return millis(); //Returns the number of milliseconds passed since the Arduino board began running the current program
-    return HAL_GetTick();
+    return HAL_GetTick(); //Returns the number of milliseconds passed since the Arduino board began running the current program
 }
 
 /*
