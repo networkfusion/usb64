@@ -56,7 +56,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: test-firmware-${{ matrix.board }}.hex
-        path: .pio/build/${{ matrix.board }}/firmware.hex
+        path: .pio/build/**/${{ matrix.board }}/firmware.hex
 
     - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
       name: Create Release
