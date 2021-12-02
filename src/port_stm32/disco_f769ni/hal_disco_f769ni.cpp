@@ -162,7 +162,7 @@ uint32_t n64hal_millis()
 {
     //return 0;
     //return millis(); //Returns the number of milliseconds passed since the Arduino board began running the current program
-    return HAL_GetTick()
+    return HAL_GetTick();
 }
 
 /*
