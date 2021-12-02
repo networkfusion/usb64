@@ -15,8 +15,8 @@ static uint8_t _framebuffer[TFT_WIDTH * TFT_HEIGHT * TFT_PIXEL_SIZE];
 struct EXTERNAL_GFX_OP my_gfx_op;
 #endif
 
-#include "otm8009a.h"
-//Initialize here!
+#include "otm8009a.h" //TODO: What about touch input e.g. https://github.com/STMicroelectronics/STM32CubeF7/blob/master/Drivers/BSP/Components/ft6x06/ft6x06.c?
+//Initialize here! perhaps https://github.com/ryankurte/stm32-base/blob/master/drivers/BSP/STM32F769I-Discovery/stm32f769i_discovery_lcd.c will help?!
 
 //Stub for GuiLite. Remove if not required.
 extern "C" void delay_ms(unsigned short nms)

@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+// TODO: Requires an SD lib like SDFS or FatFS....
+
 /*
  * Function: Initliased the File access device (SD Card, EMMC, Flash ROM, etc)
  *           This is used to save/load mempaks, usb64 config settings, GB Roms for transfer pak etc.
