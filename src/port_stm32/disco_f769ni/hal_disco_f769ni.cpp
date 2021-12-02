@@ -130,7 +130,7 @@ void n64hal_rtc_write(uint8_t *day_high, uint8_t *day_low, uint8_t *h, uint8_t *
  */
 void n64hal_hs_tick_init()
 {
-    //ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
+    ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
 }
 
 /*
@@ -153,8 +153,7 @@ uint32_t n64hal_hs_tick_get_speed()
  */
 uint32_t n64hal_hs_tick_get()
 {
-    return 0;
-    //return ARM_DWT_CYCCNT;
+    return ARM_DWT_CYCCNT;
 }
 
 uint32_t n64hal_millis()
