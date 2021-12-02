@@ -55,8 +55,10 @@ jobs:
     - name: Upload firmware artifact to current run
       uses: actions/upload-artifact@v2
       with:
-        name: test-firmware-${{ matrix.board }}.hex
-        path: .pio/build/**/${{ matrix.board }}/firmware.hex
+        name: test-firmware-${{ matrix.board }}
+        path: |
+          .pio/build/**/*.hex
+          .pio/build/**/*.bin
 
     - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
       name: Create Release
