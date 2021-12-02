@@ -154,8 +154,9 @@ uint32_t n64hal_hs_tick_get_speed()
  */
 uint32_t n64hal_hs_tick_get()
 {
-    //return 0;
-    return ARM_DWT_CYCCNT;
+    return 0;
+    //return ARM_DWT_CYCCNT;
+    return DWT->CYCCNT; // perhaps this will help?!: https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/
 }
 
 uint32_t n64hal_millis()
