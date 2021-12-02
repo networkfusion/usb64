@@ -59,6 +59,8 @@ jobs:
         path: |
           .pio/build/**/*.hex
           .pio/build/**/*.bin
+          .pio/build/**/*.elf
+          .pio/build/**/*.map
 
     - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
       name: Create Release
