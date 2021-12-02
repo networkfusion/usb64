@@ -8,6 +8,7 @@
 #include "usb64_conf.h"
 #include "fileio.h"
 #include "memory.h"
+#include "stm32f7xx_hal.h"
 
 /*
  * Function: Initialse any device specifc aspects
@@ -159,8 +160,9 @@ uint32_t n64hal_hs_tick_get()
 
 uint32_t n64hal_millis()
 {
-    return 0;
+    //return 0;
     //return millis(); //Returns the number of milliseconds passed since the Arduino board began running the current program
+    return HAL_GetTick()
 }
 
 /*
