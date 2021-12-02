@@ -15,7 +15,7 @@ static uint8_t _framebuffer[TFT_WIDTH * TFT_HEIGHT * TFT_PIXEL_SIZE];
 struct EXTERNAL_GFX_OP my_gfx_op;
 #endif
 
-#include "Otm8009a.h" //needs fixing?!
+#include "otm8009a.h"
 //Initialize here!
 
 //Stub for GuiLite. Remove if not required.
