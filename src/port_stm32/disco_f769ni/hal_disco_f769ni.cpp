@@ -132,6 +132,7 @@ void n64hal_rtc_write(uint8_t *day_high, uint8_t *day_low, uint8_t *h, uint8_t *
 void n64hal_hs_tick_init()
 {
     //ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
+    //DWT->CTRL |= DWT->CTRL->CYCCNTENA //something like this???
 }
 
 /*
@@ -161,7 +162,7 @@ uint32_t n64hal_hs_tick_get()
 
 uint32_t n64hal_millis()
 {
-    return HAL_GetTick(); //Returns the number of milliseconds passed since the Arduino board began running the current program
+    return HAL_GetTick(); //Returns the number of milliseconds passed since the board began running the current program
 }
 
 /*
@@ -200,6 +201,7 @@ uint8_t n64hal_input_read(int pin)
 {
     return 0;
     //return digitalReadFast(pin);
+    //HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9)) //probably need to convert to a pin number from port/pin
 }
 
 /*
@@ -239,6 +241,7 @@ void n64hal_pin_set_mode(int pin, uint8_t mode)
 void n64hal_output_set(uint8_t pin, uint8_t level)
 {
     //digitalWriteFast(pin, level);
+    //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET); //probably need to convert to a port and pin number from pin
 }
 
 // TODO: this function is not included in the "null_port" hal!
