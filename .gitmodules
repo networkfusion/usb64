@@ -4,6 +4,6 @@
 [submodule "src/teensy41/ILI9341_t3n"]
 	path = src/port_teensy41/ILI9341_t3n
 	url = https://github.com/KurtE/ILI9341_t3n.git
-[submodule "src/stm32/otm8009a"]
+[submodule "src/port_stm32/disco_f769ni/otm8009a"]
 	path = src/port_stm32/disco_f769ni/otm8009a
 	url = https://github.com/STMicroelectronics/stm32-otm8009a.git

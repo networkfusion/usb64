@@ -6,7 +6,6 @@
 #include "controller_icon.h"
 #include "usb64_logo.h"
 #include "GuiLite.h"
-//#include "Otm8009a.h" //needs the submodule initializing?
 
 c_surface *psurface_guilite = NULL;
 c_display *pdisplay_guilite = NULL;
@@ -15,6 +14,9 @@ static uint8_t _framebuffer[TFT_WIDTH * TFT_HEIGHT * TFT_PIXEL_SIZE];
 #else
 struct EXTERNAL_GFX_OP my_gfx_op;
 #endif
+
+#include "otm8009a.h"
+//Initialize here!
 
 //Stub for GuiLite. Remove if not required.
 extern "C" void delay_ms(unsigned short nms)
