@@ -16,6 +16,7 @@
  */
 void n64hal_system_init()
 {
+    //NVIC_SET_PRIORITY(IRQ_GPIO6789, 1);
 }
 
 /*
@@ -25,6 +26,7 @@ void n64hal_system_init()
  */
 void n64hal_debug_init()
 {
+    //serial_port.begin(256000);
 }
 
 /*
@@ -34,6 +36,7 @@ void n64hal_debug_init()
  */
 void n64hal_debug_write(char c)
 {
+    //serial_port.write(c);
 }
 
 /*
@@ -43,6 +46,7 @@ void n64hal_debug_write(char c)
  */
 void n64hal_disable_interrupts()
 {
+    //noInterrupts();
 }
 
 /*
@@ -52,6 +56,7 @@ void n64hal_disable_interrupts()
  */
 void n64hal_enable_interrupts()
 {
+    //interrupts();
 }
 
 /*
@@ -125,6 +130,7 @@ void n64hal_rtc_write(uint8_t *day_high, uint8_t *day_low, uint8_t *h, uint8_t *
  */
 void n64hal_hs_tick_init()
 {
+    //ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
 }
 
 /*
@@ -136,6 +142,7 @@ void n64hal_hs_tick_init()
 uint32_t n64hal_hs_tick_get_speed()
 {
     return 0;
+    //return F_CPU;
 }
 
 /*
@@ -147,11 +154,13 @@ uint32_t n64hal_hs_tick_get_speed()
 uint32_t n64hal_hs_tick_get()
 {
     return 0;
+    //return ARM_DWT_CYCCNT;
 }
 
 uint32_t n64hal_millis()
 {
     return 0;
+    //return millis(); //Returns the number of milliseconds passed since the Arduino board began running the current program
 }
 
 /*
@@ -166,6 +175,16 @@ uint32_t n64hal_millis()
  */
 void n64hal_input_swap(n64_input_dev_t *controller, uint8_t val)
 {
+    switch (val)
+    {
+    case N64_OUTPUT:
+        //pinMode(controller->gpio_pin, OUTPUT);
+        break;
+    case N64_INPUT:
+    default:
+        //pinMode(controller->gpio_pin, INPUT_PULLUP);
+        break;
+    }
 }
 
 /*
@@ -179,6 +198,7 @@ void n64hal_input_swap(n64_input_dev_t *controller, uint8_t val)
 uint8_t n64hal_input_read(int pin)
 {
     return 0;
+    //return digitalReadFast(pin);
 }
 
 /*
@@ -191,6 +211,19 @@ uint8_t n64hal_input_read(int pin)
  */
 void n64hal_pin_set_mode(int pin, uint8_t mode)
 {
+    switch (mode)
+    {
+    case N64_OUTPUT:
+        //pinMode(pin, OUTPUT);
+        break;
+    case N64_INPUT_PULLDOWN:
+        //pinMode(pin, INPUT_PULLDOWN);
+        break;
+    case N64_INPUT_PULLUP:
+    default:
+        //pinMode(pin, INPUT_PULLUP);
+        break;
+    }
 }
 
 /*
@@ -204,7 +237,29 @@ void n64hal_pin_set_mode(int pin, uint8_t mode)
  */
 void n64hal_output_set(uint8_t pin, uint8_t level)
 {
+    //digitalWriteFast(pin, level);
 }
+
+// TODO: this function is not included in the "null_port" hal!
+// void n64hal_attach_interrupt(uint8_t pin, void (*handler)(void), int mode)
+// {
+//     // int _mode = -1;
+//     // switch (mode)
+//     // {
+//     //     case N64_INTMODE_CHANGE: _mode = CHANGE; break;
+//     //     case N64_INTMODE_FALLING: _mode = FALLING; break;
+//     //     case N64_INTMODE_RISING: _mode = RISING; break;
+//     // }
+//     // if (_mode != -1)
+//     // {
+//     //     attachInterrupt(digitalPinToInterrupt(pin), handler, _mode);
+//     // }
+// }
+
+// void n64hal_detach_interrupt(uint8_t pin)
+// {
+//     //detachInterrupt(digitalPinToInterrupt(pin));
+// }
 
 /*
  * Function: Returns an array of data read from external ram.
