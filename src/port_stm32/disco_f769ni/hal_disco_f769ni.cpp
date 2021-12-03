@@ -131,8 +131,8 @@ void n64hal_rtc_write(uint8_t *day_high, uint8_t *day_low, uint8_t *h, uint8_t *
  */
 void n64hal_hs_tick_init()
 {
-    //ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
-    //DWT->CTRL |= DWT->CTRL->CYCCNTENA //something like this???
+    DWT->CTRL |= 1 ; // enable the counter -- //ARM_DWT_CTRL |= ARM_DWT_CTRL_CYCCNTENA;
+    DWT->CYCCNT = 0; // reset the counter 
 }
 
 /*
@@ -155,9 +155,9 @@ uint32_t n64hal_hs_tick_get_speed()
  */
 uint32_t n64hal_hs_tick_get()
 {
-    return 0;
+    //return 0;
     //return ARM_DWT_CYCCNT;
-    return DWT->CYCCNT; // perhaps this will help?!: https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/
+    return DWT->CYCCNT; // ref: https://www.carminenoviello.com/2015/09/04/precisely-measure-microseconds-stm32/
 }
 
 uint32_t n64hal_millis()
