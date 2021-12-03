@@ -18,8 +18,8 @@
 void n64hal_system_init()
 {
     HAL_Init();
-    SystemClock_Config();
-    MX_GPIO_Init();
+    //SystemClock_Config();
+    //MX_GPIO_Init();
     //NVIC_SET_PRIORITY(IRQ_GPIO6789, 1);
     // see http://micromouseusa.com/?p=279
 }
