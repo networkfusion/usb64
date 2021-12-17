@@ -54,8 +54,8 @@ typedef enum {
 
 /* TFT DISPLAY */
 #define ENABLE_TFT_DISPLAY 1
-#define TFT_WIDTH 480
-#define TFT_HEIGHT 272
+#define TFT_WIDTH 800
+#define TFT_HEIGHT 472
 #define TFT_PIXEL_SIZE 4
 #define TFT_USE_FRAMEBUFFER 0
 

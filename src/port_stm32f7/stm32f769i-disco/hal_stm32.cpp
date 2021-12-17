@@ -94,33 +94,32 @@ void n64hal_gpio_init()
     dev_gpio_t *pin;
     GPIO_InitTypeDef GPIO_InitStruct;
 
-    __HAL_RCC_GPIOB_CLK_ENABLE();
-    __HAL_RCC_GPIOI_CLK_ENABLE();
-    __HAL_RCC_GPIOG_CLK_ENABLE();
+    __HAL_RCC_GPIOF_CLK_ENABLE();
+    __HAL_RCC_GPIOJ_CLK_ENABLE();
 
     for (int i = 0; i < USB64_PIN_MAX; i++)
     {
         switch (i)
         {
         case N64_CONSOLE_SENSE_PIN:
-            _dev_gpio[i].pin = GPIO_PIN_4; //D3
-            _dev_gpio[i].port = GPIOB;
+            _dev_gpio[i].pin = GPIO_PIN_6; //D3
+            _dev_gpio[i].port = GPIOF;
             break;
         case N64_CONTROLLER_1_PIN:
-            _dev_gpio[i].pin = GPIO_PIN_6; //D2
-            _dev_gpio[i].port = GPIOG;
+            _dev_gpio[i].pin = GPIO_PIN_1; //D2
+            _dev_gpio[i].port = GPIOJ;
             break;
         case N64_CONTROLLER_2_PIN:
-            _dev_gpio[i].pin = GPIO_PIN_7; //D4
-            _dev_gpio[i].port = GPIOG;
+            _dev_gpio[i].pin = GPIO_PIN_0; //D4
+            _dev_gpio[i].port = GPIOJ;
             break;
         case N64_CONTROLLER_3_PIN:
             _dev_gpio[i].pin = GPIO_PIN_3; //D7
-            _dev_gpio[i].port = GPIOI;
+            _dev_gpio[i].port = GPIOJ;
             break;
         case N64_CONTROLLER_4_PIN:
-            _dev_gpio[i].pin = GPIO_PIN_2; //D8
-            _dev_gpio[i].port = GPIOI;
+            _dev_gpio[i].pin = GPIO_PIN_4; //D8
+            _dev_gpio[i].port = GPIOJ;
             break;
         }
     }
