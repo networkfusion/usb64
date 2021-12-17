@@ -118,8 +118,8 @@ void Error_Handler(void);
 #define OTG_FS_P_GPIO_Port GPIOA
 #define NC1_Pin GPIO_PIN_8
 #define NC1_GPIO_Port GPIOI
-#define SAI2_MCLKA_Pin GPIO_PIN_4
-#define SAI2_MCLKA_GPIO_Port GPIOI
+#define SAI1_MCLKA_Pin GPIO_PIN_7 //Updated.
+#define SAI1_MCLKA_GPIO_Port GPIOG //Updated.
 #define LCD_DE_Pin GPIO_PIN_7
 #define LCD_DE_GPIO_Port GPIOK
 #define LCD_B7_Pin GPIO_PIN_6
@@ -128,8 +128,8 @@ void Error_Handler(void);
 #define LCD_B6_GPIO_Port GPIOK
 #define LCD_B4_Pin GPIO_PIN_12
 #define LCD_B4_GPIO_Port GPIOG
-#define SAI2_SDB_Pin GPIO_PIN_10
-#define SAI2_SDB_GPIO_Port GPIOG
+#define SAI1_SDB_Pin GPIO_PIN_3 //Updated.
+#define SAI1_SDB_GPIO_Port GPIOE//Updated.
 #define LCD_B2_Pin GPIO_PIN_14
 #define LCD_B2_GPIO_Port GPIOJ
 #define OTG_FS_PowerSwitchOn_Pin GPIO_PIN_5
@@ -150,14 +150,14 @@ void Error_Handler(void);
 #define uSD_Detect_GPIO_Port GPIOI //Updated.
 #define FMC_A0_Pin GPIO_PIN_0 //Checked.
 #define FMC_A0_GPIO_Port GPIOF //Checked.
-#define SAI2_SCKA_Pin GPIO_PIN_5
-#define SAI2_SCKA_GPIO_Port GPIOI
-#define SAI2_FSA_Pin GPIO_PIN_7
-#define SAI2_FSA_GPIO_Port GPIOI
+#define SAI1_SCKA_Pin GPIO_PIN_5 //Updated.
+#define SAI1_SCKA_GPIO_Port GPIOE //Updated.
+#define SAI1_FSA_Pin GPIO_PIN_4 //Updated.
+#define SAI1_FSA_GPIO_Port GPIOE //Updated.
 #define LCD_HSYNC_Pin GPIO_PIN_10
 #define LCD_HSYNC_GPIO_Port GPIOI
-#define SAI2_SDA_Pin GPIO_PIN_6
-#define SAI2_SDA_GPIO_Port GPIOI
+#define SAI1_SDA_Pin GPIO_PIN_6 //Updated.
+#define SAI1_SDA_GPIO_Port GPIOE //Updated.
 #define LCD_B5_Pin GPIO_PIN_4
 #define LCD_B5_GPIO_Port GPIOK
 #define LCD_BL_CTRL_Pin GPIO_PIN_3
