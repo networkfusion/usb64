@@ -38,7 +38,7 @@ bool memory_dev_init()
     // debug_print_memory("[MEMORY] Heap start: %08x\n", (void *)(extram_start));
     // debug_print_memory("[MEMORY] Heap end: %08x\n", (void *)(extram_end));
     // debug_print_memory("[MEMORY] Number of memory chunks: %u\n", extram_bytes / 32768);
-    // return true;
+    return true;
 }
 
 void *memory_dev_malloc(uint32_t len)

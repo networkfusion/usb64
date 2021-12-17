@@ -146,8 +146,8 @@ void Error_Handler(void);
 #define ARDUINO_D8_EXTI_IRQn EXTI2_IRQn
 #define OTG_FS_N_Pin GPIO_PIN_11
 #define OTG_FS_N_GPIO_Port GPIOA
-#define uSD_Detect_Pin GPIO_PIN_13
-#define uSD_Detect_GPIO_Port GPIOC
+#define uSD_Detect_Pin GPIO_PIN_15 //Different from other port
+#define uSD_Detect_GPIO_Port GPIOI //Different from other port
 #define FMC_A0_Pin GPIO_PIN_0
 #define FMC_A0_GPIO_Port GPIOF
 #define SAI2_SCKA_Pin GPIO_PIN_5
