@@ -106,16 +106,16 @@ void Error_Handler(void);
 #define RMII_TX_EN_GPIO_Port GPIOG //Checked.
 #define LCD_B1_Pin GPIO_PIN_13
 #define LCD_B1_GPIO_Port GPIOJ
-#define OTG_FS_VBUS_Pin GPIO_PIN_12
-#define OTG_FS_VBUS_GPIO_Port GPIOJ
+// #define OTG_FS_VBUS_Pin GPIO_PIN_12
+// #define OTG_FS_VBUS_GPIO_Port GPIOJ
 #define FMC_D2_Pin GPIO_PIN_0 //Checked.
 #define FMC_D2_GPIO_Port GPIOD //Checked.
 #define SDMMC_D3_Pin GPIO_PIN_4 //Updated.
 #define SDMMC_D3_GPIO_Port GPIOB //Updated.
 #define SDMMC_D2_Pin GPIO_PIN_3 //Updated.
 #define SDMMC_D2_GPIO_Port GPIOB //Updated.
-#define OTG_FS_P_Pin GPIO_PIN_12
-#define OTG_FS_P_GPIO_Port GPIOA
+// #define OTG_FS_P_Pin GPIO_PIN_12
+// #define OTG_FS_P_GPIO_Port GPIOA
 #define NC1_Pin GPIO_PIN_8
 #define NC1_GPIO_Port GPIOI
 #define SAI1_MCLKA_Pin GPIO_PIN_7 //Updated.
@@ -132,8 +132,8 @@ void Error_Handler(void);
 #define SAI1_SDB_GPIO_Port GPIOE//Updated.
 #define LCD_B2_Pin GPIO_PIN_14
 #define LCD_B2_GPIO_Port GPIOJ
-#define OTG_FS_PowerSwitchOn_Pin GPIO_PIN_5
-#define OTG_FS_PowerSwitchOn_GPIO_Port GPIOD
+// #define OTG_FS_PowerSwitchOn_Pin GPIO_PIN_5
+// #define OTG_FS_PowerSwitchOn_GPIO_Port GPIOD
 #define DCMI_D5_Pin GPIO_PIN_3
 #define DCMI_D5_GPIO_Port GPIOD
 #define FMC_D3_Pin GPIO_PIN_1 //Checked.
@@ -144,8 +144,8 @@ void Error_Handler(void);
 #define ARDUINO_D8_Pin GPIO_PIN_2
 #define ARDUINO_D8_GPIO_Port GPIOI
 #define ARDUINO_D8_EXTI_IRQn EXTI2_IRQn
-#define OTG_FS_N_Pin GPIO_PIN_11
-#define OTG_FS_N_GPIO_Port GPIOA
+// #define OTG_FS_N_Pin GPIO_PIN_11
+// #define OTG_FS_N_GPIO_Port GPIOA
 #define uSD_Detect_Pin GPIO_PIN_15 //Updated.
 #define uSD_Detect_GPIO_Port GPIOI //Updated.
 #define FMC_A0_Pin GPIO_PIN_0 //Checked.
@@ -166,16 +166,16 @@ void Error_Handler(void);
 #define DCMI_VSYNC_GPIO_Port GPIOG
 #define LCD_B3_Pin GPIO_PIN_15
 #define LCD_B3_GPIO_Port GPIOJ
-#define OTG_FS_OverCurrent_Pin GPIO_PIN_4
-#define OTG_FS_OverCurrent_GPIO_Port GPIOD
+// #define OTG_FS_OverCurrent_Pin GPIO_PIN_4
+// #define OTG_FS_OverCurrent_GPIO_Port GPIOD
 #define SDMMC_CMD_Pin GPIO_PIN_7 //Updated.
 #define SDMMC_CMD_GPIO_Port GPIOD //Checked.
 #define TP3_Pin GPIO_PIN_15
 #define TP3_GPIO_Port GPIOH
 #define ARDUINO_SCK_D13_Pin GPIO_PIN_1
 #define ARDUINO_SCK_D13_GPIO_Port GPIOI
-#define OTG_FS_ID_Pin GPIO_PIN_10
-#define OTG_FS_ID_GPIO_Port GPIOA
+// #define OTG_FS_ID_Pin GPIO_PIN_10
+// #define OTG_FS_ID_GPIO_Port GPIOA
 #define RCC_OSC32_IN_Pin GPIO_PIN_14
 #define RCC_OSC32_IN_GPIO_Port GPIOC
 #define FMC_A1_Pin GPIO_PIN_1 //Checked.

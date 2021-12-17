@@ -22,16 +22,16 @@ void usbh_dev_init()
 
     GPIO_InitTypeDef GPIO_InitStruct;
 
-    //Turn on 5V output
-    GPIO_InitStruct.Pin = OTG_FS_PowerSwitchOn_Pin;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(OTG_FS_PowerSwitchOn_GPIO_Port, &GPIO_InitStruct);
-    HAL_GPIO_WritePin(OTG_FS_PowerSwitchOn_GPIO_Port, OTG_FS_PowerSwitchOn_Pin, GPIO_PIN_RESET);
+    // //Turn on 5V output (not supported (required) when using HS?!)
+    // GPIO_InitStruct.Pin = OTG_FS_PowerSwitchOn_Pin;
+    // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    // GPIO_InitStruct.Pull = GPIO_NOPULL;
+    // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    // HAL_GPIO_Init(OTG_FS_PowerSwitchOn_GPIO_Port, &GPIO_InitStruct);
+    // HAL_GPIO_WritePin(OTG_FS_PowerSwitchOn_GPIO_Port, OTG_FS_PowerSwitchOn_Pin, GPIO_PIN_RESET);
 
-    //Setup USB data pins
-    GPIO_InitStruct.Pin = GPIO_PIN_11 | GPIO_PIN_12;
+    //Setup USB data pins (need to adjust for HS)
+    GPIO_InitStruct.Pin = GPIO_PIN_11 | GPIO_PIN_12; // USB_OTG_FS_DM | USB_OTG_FS_DP
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;

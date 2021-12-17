@@ -17,7 +17,7 @@ bool memory_dev_init()
     // extram_start = (int)&_extram_start;
     // extram_end = (int)&_extram_end;
 
-    // //There's 512Kb usable SDRAM on the f769 board located from 0x20020000
+    // //There's On-board 128Mbit (4M x 32-bit) SDRAM on the f769 board located from ??? 0x20020000
     // //The first 512kBytes are reversed for the LCD. extram_start starts just after this (at 0xC0080000)
     // //I create a new heap at this location for allocating large files
     extern SDRAM_HandleTypeDef sdramHandle;
