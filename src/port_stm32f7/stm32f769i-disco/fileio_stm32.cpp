@@ -1,7 +1,7 @@
 // Copyright 2020, Ryan Wendland, usb64
 // SPDX-License-Identifier: MIT
 
-#include "common.h"
+#include "usb64_common.h"
 #include "ff.h"
 #include "ff_gen_drv.h"
 #include "sd_diskio.h"

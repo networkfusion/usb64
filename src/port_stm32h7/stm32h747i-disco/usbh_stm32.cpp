@@ -1,7 +1,7 @@
 // Copyright 2020, Ryan Wendland, usb64
 // SPDX-License-Identifier: MIT
 
-#include "common.h"
+#include "usb64_common.h"
 #include "stm32h7xx_hal.h"
 #include "tusb.h"
 

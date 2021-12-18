@@ -40,9 +40,11 @@ static bool port_connected = 0;
 //application is expected to program this field as an integer multiple of the maximum packet
 //size for IN transactions (periodic and non-periodic).
 //FIXME, how to make this more efficient?
+/*
 static uint8_t _local_buffer[512];
 static uint32_t user_len;
-static uint8_t *user_buff;
+static uint8_t *user_buff; 
+*/
 
 static uint8_t _alloc_pipe()
 {

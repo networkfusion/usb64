@@ -1,7 +1,7 @@
 // Copyright 2020, Ryan Wendland, usb64
 // SPDX-License-Identifier: MIT
 
-#include "common.h"
+#include "usb64_common.h"
 #include "tft.h"
 #include "controller_icon.h"
 #include "usb64_logo.h"

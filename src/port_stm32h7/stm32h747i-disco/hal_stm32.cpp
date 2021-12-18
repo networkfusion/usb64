@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 #include <stdlib.h>
-#include "common.h"
+#include "usb64_common.h"
 #include "memory.h"
 #include "fileio.h"
 #include "memory.h"

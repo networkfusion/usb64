@@ -21,7 +21,7 @@
 #define __SD_DISKIO_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "common.h"
+#include "usb64_common.h"
 
 extern const Diskio_drvTypeDef  SD_Driver;
 
