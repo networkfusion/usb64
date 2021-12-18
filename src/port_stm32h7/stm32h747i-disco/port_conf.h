@@ -59,13 +59,13 @@ typedef enum {
 #define TFT_PIXEL_SIZE 4
 #define TFT_USE_FRAMEBUFFER 0
 
-// /* Define for variables to store in flash only */
-// #ifndef PROGMEM
-// #define PROGMEM  __attribute__((section(".text.rodata")))
-// #endif
-// /* Define for function to store in flash only */
-// #ifndef FLASHMEM
-// #define FLASHMEM  __attribute__ ((section (".text.code")))
-// #endif
+/* Define for variables to store in flash only */
+#ifndef PROGMEM
+#define PROGMEM
+#endif
+/* Define for function to store in flash only */
+#ifndef FLASHMEM
+#define FLASHMEM
+#endif
 
 #endif
