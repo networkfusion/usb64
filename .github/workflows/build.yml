@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        board: [disco_f769ni,disco_h747xi] #,disco_f750n8,teensy41,none]
+        board: [disco_f769ni,disco_h747xi] #,disco_h745xi,disco_f750n8,teensy41,template]
 
     steps:
     - name: Checkout repo

@@ -8,3 +8,5 @@ D3
 D4
 D7
 D8
+
+hal_stm32 clock timings, revisit https://github.com/STMicroelectronics/STM32CubeF7/blob/master/Projects/STM32F769I-Discovery/Applications/USB_Host/MSC_Standalone/Src/main.c
