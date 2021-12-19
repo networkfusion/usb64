@@ -18,10 +18,6 @@ extern "C" {
 #include <math.h>
 #include "printf.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 #define N64_OUTPUT 1
 #define N64_INPUT 2
 #define N64_INPUT_PULLUP 2
