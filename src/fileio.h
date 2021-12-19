@@ -4,6 +4,10 @@
 #ifndef _FILEIO_H
 #define _FILEIO_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "usb64_common.h"
 
 //File access API
@@ -20,5 +24,9 @@ void fileio_dev_close_dir(int handle);
 const char* fileio_dev_get_next_filename(int handle);
 int fileio_dev_read(char *filename, uint32_t file_offset, uint8_t *data, uint32_t len);
 int fileio_dev_write(char *filename, uint8_t *data, uint32_t len);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
