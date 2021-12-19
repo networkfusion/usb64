@@ -4,6 +4,10 @@
 #ifndef _TFT_H
 #define _TFT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define TFT_BG_COLOR GL_RGB(16, 20, 16)
 
 //TFT API
@@ -18,5 +22,9 @@ void tft_add_log(char c);
 void tft_dev_init();
 void tft_dev_draw(bool force);
 bool tft_dev_is_busy();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

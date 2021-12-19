@@ -4,6 +4,10 @@
 #ifndef _INPUT_H
 #define _INPUT_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "usb64_common.h"
 #include "tusb.h"
 
@@ -141,5 +145,9 @@ void input_apply_rumble(int id, uint8_t strength);
 void input_enable_dualstick_mode(int id);
 void input_disable_dualstick_mode(int id);
 bool input_is_dualstick_mode(int id);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

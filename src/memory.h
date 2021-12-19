@@ -4,6 +4,10 @@
 #ifndef _MEMORY_H
 #define _MEMORY_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "usb64_common.h"
 
 #define MEMORY_READ_WRITE 0
@@ -28,5 +32,9 @@ uint8_t memory_get_ext_ram_size();
 bool memory_dev_init();
 void *memory_dev_malloc(uint32_t len);
 void memory_dev_free(void *add);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

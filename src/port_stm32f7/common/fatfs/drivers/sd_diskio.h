@@ -20,10 +20,18 @@
 #ifndef __SD_DISKIO_H
 #define __SD_DISKIO_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
 #include "usb64_common.h"
 
 extern const Diskio_drvTypeDef  SD_Driver;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __SD_DISKIO_H */
 

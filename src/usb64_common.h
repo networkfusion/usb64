@@ -4,6 +4,10 @@
 #ifndef N64_N64_WRAPPER_H_
 #define N64_N64_WRAPPER_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifdef ARDUINO
 #include <Arduino.h>
 #endif
@@ -104,4 +108,5 @@ void n64hal_free(void *addr);
 #ifdef __cplusplus
 }
 #endif
+
 #endif /* N64_N64_WRAPPER_H_ */
