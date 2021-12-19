@@ -3,6 +3,10 @@
 #ifndef _USB64_CONF_h
 #define _USB64_CONF_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* PIN MAPPING - Teensy uses an Arduino Backend, we just assign the enum to the Arduino Pin number
    USB64_PIN_MAX must be the largest pin number in the list add one*/
 typedef enum {
@@ -32,6 +36,10 @@ typedef enum {
 /* Optional, to save RAM, define for function to store in flash only */
 #ifndef FLASHMEM
 #define FLASHMEM
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

@@ -3,6 +3,10 @@
 #ifndef _USB64_CONF_h
 #define _USB64_CONF_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 //Specific headers for this port
 #include <stm32h7xx_hal.h>
 #include "stm32h747i_discovery_lcd.h"
@@ -66,6 +70,10 @@ typedef enum {
 /* Define for function to store in flash only */
 #ifndef FLASHMEM
 #define FLASHMEM
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

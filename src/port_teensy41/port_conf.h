@@ -3,6 +3,10 @@
 #ifndef _USB64_CONF_h
 #define _USB64_CONF_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define serial_port Serial1
 
 /* PIN MAPPING - Teensy uses an Arduino Backend, we just assign the enum to the Arduino Pin number
@@ -57,6 +61,10 @@ typedef enum {
 /* Define for function to store in flash only */
 #ifndef FLASHMEM
 #define FLASHMEM
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif
