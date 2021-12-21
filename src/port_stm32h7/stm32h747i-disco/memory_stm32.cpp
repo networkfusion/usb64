@@ -49,7 +49,7 @@ void *memory_dev_malloc(uint32_t len)
     //     debug_print_error("[MEMORY] ERROR, could not allocate memory\n");
     // }
     // return pt;
-    return NULL;
+    return malloc(len);
 }
 
 void memory_dev_free(void *add)
