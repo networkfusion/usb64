@@ -17,9 +17,8 @@ bool memory_dev_init()
     // extram_start = (int)&_extram_start;
     // extram_end = (int)&_extram_end;
 
-    // //There's On-board 128Mbit (4M x 32-bit) SDRAM on the f769 board located from ??? 0x20020000
-    // //The first 512kBytes are reversed for the LCD. extram_start starts just after this (at 0xC0080000)
-    // //I create a new heap at this location for allocating large files
+    // //There's On-board 128Mbit (4M x 32-bit) SDRAM on the f769 board
+    // //The first 512kBytes are reversed for the LCD.
     extern SDRAM_HandleTypeDef sdramHandle;
     if (sdramHandle.State != HAL_SDRAM_STATE_READY)
     {

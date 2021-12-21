@@ -5,7 +5,7 @@
 #include "tinyalloc.h"
 #include "memory.h"
 
-// //Pulled in from linker.
+//Pulled in from linker.
 // extern uint32_t _extram_start;
 // extern uint32_t _extram_end;
 
@@ -14,12 +14,11 @@
 
 bool memory_dev_init()
 {
-    extram_start = (int)&_extram_start;
-    extram_end = (int)&_extram_end;
+    // extram_start = (int)&_extram_start;
+    // extram_end = (int)&_extram_end;
 
-    //There's 8MB usable SDRAM on the f750-k board located from 0xC0000000
-    //The first 512kBytes are reversed for the LCD. extram_start starts just after this (at 0xC0080000)
-    //I create a new heap at this location for allocating large files
+    // //There's On-board 128Mbit (4M x 32-bit) SDRAM on the h747 board
+    // //The first 512kBytes are reversed for the LCD.
     extern SDRAM_HandleTypeDef sdramHandle;
     if (sdramHandle.State != HAL_SDRAM_STATE_READY)
     {
