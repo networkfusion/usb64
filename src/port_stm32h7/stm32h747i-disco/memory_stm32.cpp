@@ -19,11 +19,11 @@ bool memory_dev_init()
 
     // //There's On-board 128Mbit (4M x 32-bit) SDRAM on the h747 board
     // //The first 512kBytes are reversed for the LCD.
-    extern SDRAM_HandleTypeDef sdramHandle;
-    if (sdramHandle.State != HAL_SDRAM_STATE_READY)
-    {
-        BSP_SDRAM_Init();
-    }
+    // extern SDRAM_HandleTypeDef sdramHandle; //TODO: FIXME
+    // if (sdramHandle.State != HAL_SDRAM_STATE_READY)
+    // {
+    //     BSP_SDRAM_Init();
+    // }
 
     // uint32_t extram_bytes = extram_end - extram_start;
     // ta_init((void *)(extram_start), //Base of heap

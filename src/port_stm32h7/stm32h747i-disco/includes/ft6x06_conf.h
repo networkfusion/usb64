@@ -36,5 +36,5 @@ extern "C" {
 #ifdef __cplusplus
 }
 #endif
-
 #endif /* FT6X06_CONF_H */
+
