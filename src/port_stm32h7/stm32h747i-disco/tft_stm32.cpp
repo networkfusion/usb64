@@ -34,15 +34,15 @@ static void _tft_log_out(const char *log)
 static void _draw_pixel(int x, int y, unsigned int rgb)
 {
     //Device specific pixel draw
-    BSP_LCD_DrawPixel(x, y, rgb);
+    UTIL_LCD_SetPixel(x, y, rgb);
 }
 
 static void _fill_rect(int x0, int y0, int x1, int y1, unsigned int rgb)
 {
     UTIL_LCD_SetTextColor(rgb);
-    UTIL_LCD_FillRect(x0, y0, x1 - x0, y1 - y0);
+    UTIL_LCD_FillRect(x0, y0, x1 - x0, y1 - y0, 0); // black
     //Weird, but the above FillRect leaves before finshing properly. This fixes it?
-    UTIL_LCD_FillRect(x0, y0, 1, 1);
+    UTIL_LCD_FillRect(x0, y0, 1, 1, 0); //black
 }
 #endif
 

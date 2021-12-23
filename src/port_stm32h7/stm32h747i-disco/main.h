@@ -370,6 +370,9 @@ void Error_Handler(void);
 #define ARDUINO_MOSI_PWM_D11_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
+#define LCD_FRAME_BUFFER         0xD0000000
+#define LCD_FB_START_ADDRESS LCD_FRAME_BUFFER
+
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

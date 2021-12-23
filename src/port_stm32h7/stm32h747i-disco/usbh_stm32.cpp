@@ -35,7 +35,7 @@ void usbh_dev_init()
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    GPIO_InitStruct.Alternate = GPIO_AF10_OTG_FS;
+    GPIO_InitStruct.Alternate = GPIO_AF10_OTG1_FS; //TODO: FIXME was GPIO_AF10_OTG_FS
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     __HAL_RCC_USB_OTG_FS_CLK_ENABLE();
