@@ -15,7 +15,7 @@ c_display *pdisplay_guilite = NULL;
 // static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
 // #else
 // static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
-// struct EXTERNAL_GFX_OP my_gfx_op;
+struct EXTERNAL_GFX_OP my_gfx_op;
 // #endif
 
 static void _tft_assert(const char *file, int line)
