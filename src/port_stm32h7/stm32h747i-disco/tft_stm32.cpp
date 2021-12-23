@@ -6,7 +6,7 @@
 #include "controller_icon.h"
 #include "usb64_logo.h"
 #include "GuiLite.h"
-#include "stm32_lcd.h" //For util functinos.
+#include "stm32_lcd.h" //For lcd util functions that were previously in BSP.
 
 #define TFT_FRAMEBUFFER_SIZE (TFT_WIDTH * TFT_HEIGHT * TFT_PIXEL_SIZE)
 c_surface *psurface_guilite = NULL;
