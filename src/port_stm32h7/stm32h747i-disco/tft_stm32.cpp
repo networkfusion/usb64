@@ -38,10 +38,10 @@ static void _draw_pixel(int x, int y, unsigned int rgb)
 
 static void _fill_rect(int x0, int y0, int x1, int y1, unsigned int rgb)
 {
-    BSP_LCD_SetTextColor(rgb);
-    BSP_LCD_FillRect(x0, y0, x1 - x0, y1 - y0);
+    UTIL_LCD_SetTextColor(rgb);
+    UTIL_LCD_FillRect(x0, y0, x1 - x0, y1 - y0);
     //Weird, but the above FillRect leaves before finshing properly. This fixes it?
-    BSP_LCD_FillRect(x0, y0, 1, 1);
+    UTIL_LCD_FillRect(x0, y0, 1, 1);
 }
 #endif
 
@@ -73,12 +73,21 @@ void tft_dev_init()
     pdisplay_guilite = &display;
     register_debug_function(_tft_assert, _tft_log_out);
 #if (ENABLE_TFT_DISPLAY >= 1)
-    BSP_LCD_Init();
-    BSP_LCD_LayerDefaultInit(0, (uint32_t)_framebuffer);
-    BSP_LCD_SelectLayer(0);
-    BSP_LCD_SetBackColor(TFT_BG_COLOR);
-    BSP_LCD_Clear(TFT_BG_COLOR);
-    BSP_LCD_DisplayOn();
+    // /* LTDC, DSI initialization and LCD screen initialization */
+    // lcd_status = BSP_LCD_Init(0,LCD_ORIENTATION_LANDSCAPE);
+    // BSP_LCD_SetLayerAddress(0,0, LCD_FRAME_BUFFER);
+    // /* Get the LCD width and height */
+    // BSP_LCD_GetXSize(0,&LCD_X_Size);
+    // BSP_LCD_GetYSize(0,&LCD_Y_Size);
+
+    /* Initialize the LCD */
+    BSP_LCD_Init(0, LCD_ORIENTATION_LANDSCAPE);
+    UTIL_LCD_SetFuncDriver(&LCD_Driver);
+    UTIL_LCD_SetLayer(0); //TODO: FIXME: was BSP_LCD_LayerDefaultInit(0, (uint32_t)_framebuffer);
+    UTIL_LCD_Clear(0);
+    UTIL_LCD_SetBackColor(TFT_BG_COLOR);
+    UTIL_LCD_Clear(TFT_BG_COLOR);
+    BSP_LCD_DisplayOn(0);
 #endif
 }
 

@@ -61,12 +61,12 @@
      o Draw a bitmap image using the BSP_LCD_DrawBitmap() function.
 
    + Options
-     o Configure the LTDC reload mode by calling BSP_LCD_Relaod(). By default, the
+     o Configure the LTDC reload mode by calling BSP_LCD_Reload(). By default, the
        reload mode is set to BSP_LCD_RELOAD_IMMEDIATE then LTDC is reloaded immediately.
        To control the reload mode:
-         - Call BSP_LCD_Relaod() with ReloadType parameter set to BSP_LCD_RELOAD_NONE
+         - Call BSP_LCD_Reload() with ReloadType parameter set to BSP_LCD_RELOAD_NONE
          - Configure LTDC (color keying, transparency ..)
-         - Call BSP_LCD_Relaod() with ReloadType parameter set to BSP_LCD_RELOAD_IMMEDIATE
+         - Call BSP_LCD_Reload() with ReloadType parameter set to BSP_LCD_RELOAD_IMMEDIATE
            for immediate reload or BSP_LCD_RELOAD_VERTICAL_BLANKING for LTDC reload
            in the next vertical blanking
      o Configure LTDC layers using BSP_LCD_ConfigLayer()
@@ -1067,7 +1067,7 @@ int32_t BSP_LCD_GetPixelFormat(uint32_t Instance, uint32_t *PixelFormat)
   *         - BSP_LCD_RELOAD_VERTICAL_BLANKING
   * @retval BSP status
   */
-int32_t BSP_LCD_Relaod(uint32_t Instance, uint32_t ReloadType)
+int32_t BSP_LCD_Reload(uint32_t Instance, uint32_t ReloadType)
 {
   int32_t ret = BSP_ERROR_NONE;
 
