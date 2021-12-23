@@ -11,12 +11,12 @@
 #define TFT_FRAMEBUFFER_SIZE (TFT_WIDTH * TFT_HEIGHT * TFT_PIXEL_SIZE)
 c_surface *psurface_guilite = NULL;
 c_display *pdisplay_guilite = NULL;
-#if TFT_USE_FRAMEBUFFER
-static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
-#else
-static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
-struct EXTERNAL_GFX_OP my_gfx_op;
-#endif
+// #if TFT_USE_FRAMEBUFFER
+// static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
+// #else
+// static uint8_t *_framebuffer = (uint8_t *)(LCD_FB_START_ADDRESS);
+// struct EXTERNAL_GFX_OP my_gfx_op;
+// #endif
 
 static void _tft_assert(const char *file, int line)
 {

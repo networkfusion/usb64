@@ -19,8 +19,8 @@ void usbh_dev_init() /* borrowed from Projects\STM32H747I-DISCO\Applications\USB
 {
     GPIO_InitTypeDef GPIO_InitStruct;
 
-    if (hpcd->Instance == USB2_OTG_FS)
-    {
+    // if (hpcd->Instance == USB2_OTG_FS) //TODO: FIXME seems unsupported: `error: base operand of '->' has non-pointer type 'HCD_HandleTypeDef'`
+    // {
         __HAL_RCC_GPIOA_CLK_ENABLE();
 
         /* Configure DM DP Pins */
@@ -55,7 +55,7 @@ void usbh_dev_init() /* borrowed from Projects\STM32H747I-DISCO\Applications\USB
 
         /* Enable USBFS Interrupt */
         HAL_NVIC_EnableIRQ(OTG_FS_IRQn);
-    }
+    // }
     // else if (hpcd->Instance == USB1_OTG_HS)
     // {
     //     /* Configure USB FS GPIOs */
