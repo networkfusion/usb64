@@ -51,7 +51,7 @@ void n64hal_system_init()
     // SCB->VTOR = (uint32_t)vtor;
     // __enable_irq();
 
-    __HAL_RCC_CRC_CLK_ENABLE();
+    __HAL_RCC_CRC_CLK_ENABLE(); /* Enable the CRC Module */
     hcrc.Instance = CRC;
     hcrc.Init.DefaultPolynomialUse = DEFAULT_POLYNOMIAL_DISABLE;
     hcrc.Init.DefaultInitValueUse = DEFAULT_INIT_VALUE_DISABLE;
@@ -69,6 +69,8 @@ void n64hal_debug_init()
     GPIO_InitTypeDef GPIO_InitStruct = {0};
     __HAL_RCC_USART6_CLK_ENABLE();
     __HAL_RCC_GPIOC_CLK_ENABLE();
+    //__HAL_RCC_USART6_FORCE_RESET()
+    //__HAL_RCC_USART6_RELEASE_RESET()
     GPIO_InitStruct.Pin = GPIO_PIN_7 | GPIO_PIN_6;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;

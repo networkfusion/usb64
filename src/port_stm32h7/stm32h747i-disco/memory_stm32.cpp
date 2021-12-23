@@ -22,7 +22,7 @@ bool memory_dev_init()
     // extern SDRAM_HandleTypeDef sdramHandle; //TODO: FIXME
     // if (sdramHandle.State != HAL_SDRAM_STATE_READY)
     // {
-    //     BSP_SDRAM_Init();
+    //     BSP_SDRAM_Init(0);
     // }
 
     // uint32_t extram_bytes = extram_end - extram_start;
@@ -37,7 +37,14 @@ bool memory_dev_init()
     // debug_print_memory("[MEMORY] Heap start: %08x\n", (void *)(extram_start));
     // debug_print_memory("[MEMORY] Heap end: %08x\n", (void *)(extram_end));
     // debug_print_memory("[MEMORY] Number of memory chunks: %u\n", extram_bytes / 32768);
-    return true;
+    if(BSP_SDRAM_Init(0) != BSP_ERROR_NONE)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 void *memory_dev_malloc(uint32_t len)
