@@ -44,12 +44,12 @@ void n64hal_system_init()
     HAL_Init();
     SystemClock_Config();
 
-    __disable_irq();
-    //Move the interrupt vector table from Flash to RAM. Should have better interrupt perf and consistency
-    void *vtor = (void *)RAMDTCM_BASE;
-    memcpy(vtor, (void *)SCB->VTOR, 0x200);
-    SCB->VTOR = (uint32_t)vtor;
-    __enable_irq();
+    // __disable_irq(); //TODO: FIXME
+    // //Move the interrupt vector table from Flash to RAM. Should have better interrupt perf and consistency
+    // void *vtor = (void *)RAMDTCM_BASE;
+    // memcpy(vtor, (void *)SCB->VTOR, 0x200);
+    // SCB->VTOR = (uint32_t)vtor;
+    // __enable_irq();
 
     __HAL_RCC_CRC_CLK_ENABLE();
     hcrc.Instance = CRC;
@@ -73,7 +73,7 @@ void n64hal_debug_init()
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-    GPIO_InitStruct.Alternate = GPIO_AF8_USART6;
+    GPIO_InitStruct.Alternate = GPIO_AF7_USART6;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
     huart6.Instance = USART6;
