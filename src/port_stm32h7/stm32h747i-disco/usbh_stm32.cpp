@@ -44,8 +44,8 @@ void usbh_dev_init() /* borrowed from Projects\STM32H747I-DISCO\Applications\USB
         GPIO_InitStruct.Alternate = GPIO_AF10_OTG2_FS;
         HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-        /* Enable USB FS Clocks */
-        __HAL_RCC_USB2_OTG_FS_CLK_ENABLE();
+        // /* Enable USB FS Clocks */
+        // __HAL_RCC_USB2_OTG_FS_CLK_ENABLE(); // TODO: FIXME Should work fine without this line [H7 only?!]
 
         /* Disable USB clock during CSleep mode */
         __HAL_RCC_USB2_OTG_FS_ULPI_CLK_SLEEP_DISABLE();
