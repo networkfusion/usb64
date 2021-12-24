@@ -5,6 +5,7 @@
 #include "ff.h"
 #include "ff_gen_drv.h"
 #include "sd_diskio.h"
+#include "stm32h747i_discovery_sd.h"
 
 static FATFS fs;
 static char SDPath[4] = {0};
