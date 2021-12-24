@@ -183,18 +183,32 @@ void n64hal_debug_write(char c)
 
 void n64hal_disable_interrupts()
 {
-    //Disable the controller input interrupts
+    /** Disable the controller input interrupts */
     HAL_NVIC_DisableIRQ(EXTI9_5_IRQn);
     HAL_NVIC_DisableIRQ(EXTI2_IRQn);
     HAL_NVIC_DisableIRQ(EXTI3_IRQn);
+
+    /** Force and let in reset state the controller input interrupts + Wrapper IPs */
+    //TODO!!
+    /** Disable the controller input interrupts and Wrapper clocks */
+    //TODO!!
+
 }
 
 void n64hal_enable_interrupts()
 {
-    //Disable the controller input interrupts
+    /** @brief NVIC configuration for EXTI9_5 interrupt that is now enabled */
+    HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0x0F, 0);
     HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+    /** @brief NVIC configuration for EXTI2 interrupt that is now enabled */
+    HAL_NVIC_SetPriority(EXTI2_IRQn, 0x0F, 0);
     HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+    /** @brief NVIC configuration for EXTI3 interrupt that is now enabled */
+    HAL_NVIC_SetPriority(EXTI3_IRQn, 0x0F, 0);
     HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+    
 }
 
 void n64hal_attach_interrupt(usb64_pin_t pin, void (*handler)(void), int mode)
