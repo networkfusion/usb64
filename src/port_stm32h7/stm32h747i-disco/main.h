@@ -29,7 +29,6 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32h7xx_hal.h"
-#include "stm32h747i_discovery_sd.h" //Used for SD detection?!
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -38,6 +37,12 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+/* 
+   Workaround for the broken UNUSED macro
+   see: https://stackoverflow.com/questions/49061212/stm32-hal-library-warning-with-c14-above
+ */
+#undef UNUSED
+#define UNUSED(x) ((void)((uint32_t)(x)))
 
 /* USER CODE END ET */
 
@@ -61,7 +66,7 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define LCD_B0_Pin GPIO_PIN_4
+/* #define LCD_B0_Pin GPIO_PIN_4
 #define LCD_B0_GPIO_Port GPIOE
 #define OTG_HS_OverCurrent_Pin GPIO_PIN_3
 #define OTG_HS_OverCurrent_GPIO_Port GPIOE
@@ -364,7 +369,7 @@ void Error_Handler(void);
 #define ARDUINO_MISO_D12_Pin GPIO_PIN_14
 #define ARDUINO_MISO_D12_GPIO_Port GPIOB
 #define ARDUINO_MOSI_PWM_D11_Pin GPIO_PIN_15
-#define ARDUINO_MOSI_PWM_D11_GPIO_Port GPIOB
+#define ARDUINO_MOSI_PWM_D11_GPIO_Port GPIOB */
 /* USER CODE BEGIN Private defines */
 
 #define LCD_FRAME_BUFFER         0xD0000000

@@ -5,6 +5,7 @@
 #include "ff.h"
 #include "ff_gen_drv.h"
 #include "sd_diskio.h"
+#include "stm32h747i_discovery_sd.h"
 
 static FATFS fs;
 static char SDPath[4] = {0};
@@ -12,6 +13,21 @@ extern const Diskio_drvTypeDef SD_Driver;
 
 bool fileio_dev_init()
 {
+    if (BSP_SD_Init(0) != BSP_ERROR_NONE)
+    {
+        return false;
+    }
+
+    // if (BSP_SD_DetectITConfig(0) != BSP_ERROR_NONE)
+    // {
+    //     return false;
+    // }
+    
+    // if (!BSP_SD_IsDetected(0))
+    // {
+    //     return false;
+    // }
+
     if (FATFS_LinkDriver(&SD_Driver, SDPath) != 0)
     {
         return false;
