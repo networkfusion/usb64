@@ -52,7 +52,7 @@ jobs:
         platformio run -e ${{ matrix.board }}
         # platformio system prune --force
 
-    - if: ${{ matrix.board != 'template' }}
+    - if: matrix.board != 'template'
       name: Upload firmware artifact to current run
       uses: actions/upload-artifact@v2
       with:
@@ -73,7 +73,7 @@ jobs:
         draft: false
         prerelease: false
 
-    - if: github.event_name == 'push' && github.ref == 'refs/heads/master' && ${{ matrix.board != 'template' }} #TODO handle previews
+    - if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.board != 'template' #TODO handle previews
       name: Upload binary for release
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
