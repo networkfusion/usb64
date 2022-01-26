@@ -59,9 +59,9 @@ jobs:
         name: test-firmware-${{ matrix.board }}
         path: |
           .pio/build/**/*.hex
-          # .pio/build/**/*.bin # Dont think this is required for any boards, and makes filesize incorrect?!.
+          # .pio/build/**/*.bin # Should not be required for any boards, and makes upload file size incorrect!
           .pio/build/**/*.elf
-          .pio/build/**/*.map
+          # .pio/build/**/*.map # Currently not generated.
 
     - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
       name: Create Release
@@ -73,7 +73,7 @@ jobs:
         draft: false
         prerelease: false
 
-    - if: github.event_name == 'push' && github.ref == 'refs/heads/master' #TODO handle previews
+    - if: github.event_name == 'push' && github.ref == 'refs/heads/master' && ${{ matrix.board != 'template' }} #TODO handle previews
       name: Upload binary for release
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
