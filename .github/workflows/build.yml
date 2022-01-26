@@ -52,14 +52,14 @@ jobs:
         platformio run -e ${{ matrix.board }}
         # platformio system prune --force
 
-    - if: ${{ matrix.board }} != 'template'
+    - if: ${{ matrix.board != 'template' }}
       name: Upload firmware artifact to current run
       uses: actions/upload-artifact@v2
       with:
         name: test-firmware-${{ matrix.board }}
         path: |
           .pio/build/**/*.hex
-          # .pio/build/**/*.bin
+          # .pio/build/**/*.bin # Dont think this is required for any boards, and makes filesize incorrect?!.
           .pio/build/**/*.elf
           .pio/build/**/*.map
 
